@@ -1,0 +1,52 @@
+.weather-img {
+  width: 3.5rem;
+  height: 3.875rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--large {
+    width: 9.375rem;
+    height: 10.875rem;
+  }
+
+  &--clear {
+    background-image: url(./assets/images/clear.png);
+  }
+
+  &--hail {
+    background-image: url(./assets/images/hail.png)
+  }
+
+  &--heavy-cloud {
+    background-image: url(./assets/images/heavy-cloud.png);
+  }
+
+  &--heavy-rain {
+    background-image: url(./assets/images/heavy-rain.png);
+  }
+
+  &--light-cloud {
+    background-image: url(./assets/images/light-cloud.png);
+  }
+
+  &--light-rain {
+    background-image: url(./assets/images/light-rain.png);
+  }
+
+  &--shower {
+    background-image: url(./assets/images/shower.png);
+  }
+
+  &--sleet {
+    background-image: url(./assets/images/sleet.png);
+  }
+
+  &--snow {
+    background-image: url(./assets/images/snow.png);
+  }
+
+  &--thunderstorm {
+    background-image: url(./assets/images/thunderstorm.png)
+  }
+}
