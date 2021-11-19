@@ -1,5 +1,6 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const HTMLPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -11,9 +12,14 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new HTMLWebpackPlugin({
+    new HTMLPlugin({
       title: 'Weather App',
       template: './src/index.html',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './src/assets/images', to: 'assets/images' },
+      ],
     }),
   ],
   module: {

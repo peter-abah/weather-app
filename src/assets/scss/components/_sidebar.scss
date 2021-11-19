@@ -1,6 +1,7 @@
 .sidebar {
   background-color: var(--color-bg-alt);
   height: 100vh;
+  min-height: 40rem;
 }
 
 .main {
@@ -31,7 +32,7 @@
   &__body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     flex-grow: 1;
     padding: 4.7rem 0;
   }
@@ -39,12 +40,14 @@
 
 .weather-img {
   width: 3.5rem;
+  height: 3.875rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   &--large {
     width: 9.375rem;
+    height: 10.875rem;
   }
 
   &--clear {
