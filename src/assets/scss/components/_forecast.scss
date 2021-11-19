@@ -1,0 +1,30 @@
+.forecast {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.625rem;
+  padding: 3.25rem;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 7.5rem;
+    height: 11rem;
+    padding: 1.125rem;
+    background-color: var(--color-bg-alt);
+
+    &__title {
+      margin-bottom: .625rem;
+    }
+
+    &__temp {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__low {
+      color: var(--color-secondary)
+    }
+  }
+}
