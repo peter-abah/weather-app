@@ -32,14 +32,19 @@
     </main>
 
     <aside class="search search--hidden">
-      <form action="">
-        <div>
-          <input type="search" placeholder="search location" required>
+      <button class="search__btn">X</button>
+      <form class="search__form">
+        <div class="search__form__field">
+          <input class="search__form__input" type="search" placeholder="search location" required>
         </div>
-        <button type="submit">Search</button>
+        <button class="search__form__btn" type="submit">Search</button>
       </form>
 
-      <div></div>
+      <div class="search__results">
+        <button class="search__result">London</button>
+        <button class="search__result">Barcelona</button>
+        <button class="search__result">Long Beach</button>
+      </div>
     </aside>
   </div>
 
