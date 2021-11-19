@@ -1,0 +1,79 @@
+.main-weather-info {
+  height: 100%;
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.125rem .75rem;
+  }
+
+  &__btn {
+    padding: .625rem 1.125rem;
+    background-color: var(--color-btn-bg);
+    font-weight: 500;
+
+    &--rounded {
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 4.7rem 0;
+  }
+
+  &__temp {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+
+    &__value {
+      font-size: 9rem;
+      font-weight: 500;
+
+      &--small {
+        font-weight: 300;
+        font-size: 8rem;
+      }
+    }
+
+    &__unit {
+      align-self: center;
+      color: var(--color-secondary);
+      font-size: 3rem;
+      font-weight: 100;
+    }
+  }
+
+  &__description {
+    margin-top: 1.5rem;
+    color: var(--color-secondary);
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+
+  &__date {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: var(--color-secondary-alt);
+  }
+
+  &__location {
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: var(--color-secondary-alt);
+  }
+}
