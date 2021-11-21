@@ -1,6 +1,8 @@
 .forecast {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
   grid-gap: 1.625rem;
   padding: 3.25rem;
 
@@ -26,5 +28,41 @@
     &__low {
       color: var(--color-secondary)
     }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 33.5rem) {
+  .forecast {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 41.7rem) {
+  .forecast {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 50.25rem) {
+  .forecast {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .forecast {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .forecast {
+    grid-template-columns: repeat(5, 1fr);
   }
 }

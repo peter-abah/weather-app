@@ -20,3 +20,10 @@ button, input {
   color: inherit;
   background-color: inherit;
 }
+
+//change layout for desktops
+@media screen and (min-width: 64rem) {
+  body {
+    padding-left: calc(100%/3);
+  }
+}

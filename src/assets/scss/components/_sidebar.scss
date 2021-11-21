@@ -1,5 +1,16 @@
 .sidebar {
   background-color: var(--color-bg-alt);
-  height: 100vh;
-  min-height: 50rem;
+  height: 50rem;
+}
+
+@media screen and (min-width: 64rem) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: 32%;
+    height: 100vh;
+    max-width: 28.75rem;
+  }
 }

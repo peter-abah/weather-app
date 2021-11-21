@@ -1,5 +1,7 @@
 .highlights {
   padding: 0 1.5rem;
+  width: fit-content;
+  margin: auto;
 
   &__title {
     font-size: 1.5rem;
@@ -7,19 +9,20 @@
   }
 
   &__cards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
     align-items: center;
     padding: 2rem 0;
   }
 
   &__card {
     width: 20.5rem;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 10rem;
-    margin-bottom: 2rem;
     padding: 1.5rem;
     background-color: var(--color-bg-alt);
 
@@ -46,6 +49,7 @@
 
 .progress-bar-wrapper {
   width: 14.5rem;
+  max-width: 80%;
   margin-top: .75rem;
   font-size: .625rem;
   font-weight: 700;
@@ -78,5 +82,29 @@
   &__unit {
     width: fit-content;
     margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .highlights {
+    &__cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .highlights {
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  .highlights {
+    &__cards {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
