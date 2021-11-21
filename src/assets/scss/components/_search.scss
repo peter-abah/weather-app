@@ -73,5 +73,12 @@
 @media screen and (min-width: 64rem) {
   .search {
     width: 32%;
+
+    // adding the style again because the media query (.search) has more
+    // selectivity than the normal class (.search--hidden)
+    &--hidden {
+      width: 0;
+    }
   }
+  
 }

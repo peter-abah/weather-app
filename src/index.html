@@ -13,7 +13,7 @@
   <div class="sidebar">
     <main class="main-weather-info">
       <div class="main-weather-info__btns">
-        <button class="main-weather-info__btn">Search for places</button>
+        <button id="open-search" class="main-weather-info__btn">Search for places</button>
         <button class="main-weather-info__btn main-weather-info__btn--rounded">L</button>
       </div>
 
@@ -31,16 +31,16 @@
       </div>
     </main>
 
-    <aside class="search search--hidden">
-      <button class="search__btn">X</button>
-      <form class="search__form">
+    <aside class="search search--hidden" id="search">
+      <button id="close-search" class="search__btn">X</button>
+      <form class="search__form" id="search-form">
         <div class="search__form__field">
-          <input class="search__form__input" type="search" placeholder="search location" required>
+          <input class="search__form__input" id="search-input" type="search" placeholder="search location" required>
         </div>
         <button class="search__form__btn" type="submit">Search</button>
       </form>
 
-      <div class="search__results">
+      <div class="search__results" id="search-results">
         <button class="search__result">London</button>
         <button class="search__result">Barcelona</button>
         <button class="search__result">Long Beach</button>
