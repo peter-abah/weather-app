@@ -1,6 +1,6 @@
 import PubSub from 'pubsub-js';
 import EVENT_TYPES from '../eventTypes';
-import helperFuncs from '../helperFuncs';
+import { randomElement } from '../helperFuncs';
 import citiesData from './data.json';
 
 const cities = () => {
@@ -19,7 +19,7 @@ const cities = () => {
     PubSub.publish(EVENT_TYPES.cities, { cities: matchedCities });
   };
 
-  const random = () => helperFuncs.randomElement(citiesCollection);
+  const random = () => randomElement(citiesCollection);
 
   const getRandomCityName = () => {
     const randomCityName = random().name;
