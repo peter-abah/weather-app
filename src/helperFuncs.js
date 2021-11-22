@@ -3,5 +3,11 @@ const randomElement = (array) => {
   return array[randomIndex];
 };
 
-export default { randomElement };
-export { randomElement };
+const clearDomElement = (elem) => {
+  while (elem.lastChild) {
+    elem.lastChild.remove();
+  }
+};
+
+export default { randomElement, clearDomElement };
+export { randomElement, clearDomElement };
