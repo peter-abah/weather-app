@@ -3,6 +3,7 @@ const EVENT_TYPES = {
   random_city: 'random_city',
   cities: 'cities',
   city: 'city',
+  weather_info: 'weather_info',
 };
 
 Object.freeze(EVENT_TYPES);
