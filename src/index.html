@@ -14,20 +14,19 @@
     <main class="main-weather-info">
       <div class="main-weather-info__btns">
         <button id="open-search" class="main-weather-info__btn">Search for places</button>
-        <button class="main-weather-info__btn main-weather-info__btn--rounded">L</button>
+        <button class="main-weather-info__btn main-weather-info__btn--rounded" id="location-btn">L</button>
       </div>
 
       <div class="main-weather-info__body">
-        <div class="weather-img weather-img--large weather-img--shower"></div>
+        <div class="weather-img weather-img--large weather-img--shower" id="today-weather-img"></div>
         <p class="main-weather-info__temp">
-          <span class="main-weather-info__temp__value main-weather-info__temp__value--small">1</span>
-          <span class="main-weather-info__temp__value">5</span>
+          <span class="main-weather-info__temp__value" id="today-temp-value">15</span>
           <span class="main-weather-info__temp__unit">°C</span>
         </p>
         
-        <p class="main-weather-info__description">Shower</p>
-        <p class="main-weather-info__date"><span>Today</span> • <span>Fri 6 Jun</span></p>
-        <p class="main-weather-info__location">Helsinki</p>
+        <p class="main-weather-info__description" id="today-description">Shower</p>
+        <p class="main-weather-info__date"><span>Today</span> • <span id="today-date">Fri 6 Jun</span></p>
+        <p class="main-weather-info__location" id="today-location">Helsinki</p>
       </div>
     </main>
 
@@ -41,9 +40,6 @@
       </form>
 
       <div class="search__results" id="search-results">
-        <button class="search__result">London</button>
-        <button class="search__result">Barcelona</button>
-        <button class="search__result">Long Beach</button>
       </div>
     </aside>
   </div>
@@ -99,7 +95,7 @@
 
     <section class="highlights">
       <h2 class="highlights__title">Today's Highlights</h2>
-      <div class="highlights__cards">
+      <div class="highlights__cards" id="weather-wind-status">
         <div class="highlights__card">
           <h3 class="highlights__card__title">Wind Status</h3>
           <p class="highlights__card__info">
@@ -109,7 +105,7 @@
           <div class="wind-direction"><span>WSW</span></div>
         </div>
 
-        <div class="highlights__card">
+        <div class="highlights__card" id="weather-humidity">
           <h3 class="highlights__card__title">Humidity</h3>
           <p class="highlights__card__info">
             <span class="highlights__card__value">84</span>
@@ -121,12 +117,12 @@
               <span>50</span>
               <span>100</span>
             </p>
-            <div class="progress-bar"></div>
+            <div class="progress-bar" style="--value: 84%"></div>
             <p class="progress-bar__unit">%</p>
           </div>
         </div>
 
-        <div class="highlights__card">
+        <div class="highlights__card" id="weather-visibility">
           <h3 class="highlights__card__title">Visibility</h3>
           <p class="highlights__card__info">
             <span class="highlights__card__value">6,4</span>
@@ -134,7 +130,7 @@
           </p>
         </div>
 
-        <div class="highlights__card">
+        <div class="highlights__card" id="weather-pressure">
           <h3 class="highlights__card__title">Air Pressure</h3>
           <p class="highlights__card__info">
             <span class="highlights__card__value">998</span>

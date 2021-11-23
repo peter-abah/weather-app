@@ -68,7 +68,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 84%;
+    width: var(--value);
     height: 100%;
     border-radius: 5rem;
     background-color: var(--color-progress-bar);
