@@ -21,6 +21,10 @@ button, input {
   background-color: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 //change layout for desktops
 @media screen and (min-width: 64rem) {
   body {
