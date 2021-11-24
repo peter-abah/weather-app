@@ -68,6 +68,12 @@ const weather = (() => {
     return { lat, lon };
   };
 
+  const createCityNameRequestURL = ({ lat, lon }) => {
+    const options = `lat=${lat}&lon=${lon}&appid=${apiKey}`;
+    const requestURL = openWeatherURLs.geocode + options;
+    return requestURL;
+  };
+
   const getCityName = async (cityLocation) => {
     const requestURL = createCityNameRequestURL(cityLocation);
     const data = await fetchJSON(requestURL);
