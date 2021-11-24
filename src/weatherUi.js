@@ -8,8 +8,8 @@ const weatherUi = (() => {
     return forecastCards.map((forecastCard) => ({
       date: forecastCard.querySelector('.forecast__card__title'),
       img: forecastCard.querySelector('.weather-img'),
-      temp_high: forecastCard.querySelector('.forecast__card__high'),
-      temp_low: forecastCard.querySelector('.forecast__card__low'),
+      temp_high: forecastCard.querySelector('.forecast__card__temp--high .forecast__card__temp__value'),
+      temp_low: forecastCard.querySelector('.forecast__card__temp--low .forecast__card__temp__value'),
     }));
   };
 
