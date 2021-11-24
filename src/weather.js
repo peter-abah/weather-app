@@ -13,19 +13,6 @@ const weather = (() => {
     return response.json();
   };
 
-  const createLocationRequestURL = (cityName, country) => {
-    const options = `q=${cityName},${country}&appid=${apiKey}`;
-    const requestURL = openWeatherURLs.geocode + options;
-    return requestURL;
-  };
-
-  const getCityPosition = async (cityName, country) => {
-    const requestURL = createLocationRequestURL(cityName, country);
-    const data = await fetchJSON(requestURL);
-    const { lat, lon } = data[0];
-    return { lat, lon };
-  };
-
   const createWeatherRequestURL = ({ lat, lon }) => {
     const options = `lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${apiKey}`;
     const requestURL = openWeatherURLs.oneCall + options;
@@ -68,8 +55,21 @@ const weather = (() => {
     return weatherInfo;
   };
 
+  const createLocationRequestURL = (cityName, country) => {
+    const options = `q=${cityName},${country}&appid=${apiKey}`;
+    const requestURL = openWeatherURLs.geocode + options;
+    return requestURL;
+  };
+
+  const getCityPosition = async (cityName, country) => {
+    const requestURL = createLocationRequestURL(cityName, country);
+    const data = await fetchJSON(requestURL);
+    const { lat, lon } = data[0];
+    return { lat, lon };
+  };
+
   const getWeather = async (_, data) => {
-    const cityLocation = await getCityPosition(data);
+    const { cityLocation, cityName } = await getCityPosition(data);
     const weatherInfo = await getWeatherInfo(cityLocation, cityName);
     PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
   };
