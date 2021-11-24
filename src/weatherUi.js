@@ -103,14 +103,14 @@ const weatherUi = (() => {
   const updateWeatherInfo = (_, { today, daily, error }) => {
     if (error) {
       showError();
-      return
+      return;
     }
-    
+
     updateTodayInfo(today);
     updateDailyInfo(daily);
   };
 
-  const showLocationError = (error) => {
+  const showError = (error) => {
 
   };
 
@@ -121,7 +121,7 @@ const weatherUi = (() => {
   };
 
   const getWeatherForUserLocation = () => {
-    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showLocationError);
+    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showError);
   };
 
   const addEventListeners = () => {
