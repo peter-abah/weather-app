@@ -68,6 +68,13 @@ const weather = (() => {
     return { lat, lon };
   };
 
+  const getCityName = async (cityLocation) => {
+    const requestURL = createCityNameRequestURL(cityLocation);
+    const data = await fetchJSON(requestURL);
+    const { name } = data[0];
+    return name;
+  };
+
   const getCityInfo = async (data) => {
     let cityLocation;
     let cityName;
