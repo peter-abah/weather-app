@@ -6,6 +6,7 @@ const weather = (() => {
   const openWeatherURLs = {
     geocode: 'http://api.openweathermap.org/geo/1.0/direct?',
     oneCall: 'https://api.openweathermap.org/data/2.5/onecall?',
+    geocodeReverse: 'http://api.openweathermap.org/geo/1.0/reverse?', 
   };
 
   const fetchJSON = async (requestURL) => {
@@ -70,13 +71,14 @@ const weather = (() => {
 
   const createCityNameRequestURL = ({ lat, lon }) => {
     const options = `lat=${lat}&lon=${lon}&appid=${apiKey}`;
-    const requestURL = openWeatherURLs.geocode + options;
+    const requestURL = openWeatherURLs.geocodeReverse + options;
     return requestURL;
   };
 
   const getCityName = async (cityLocation) => {
     const requestURL = createCityNameRequestURL(cityLocation);
     const data = await fetchJSON(requestURL);
+    debugger
     const { name } = data[0];
     return name;
   };
@@ -87,10 +89,10 @@ const weather = (() => {
 
     if (data.lat) {
       cityLocation = { lat: data.lat, lon: data.lon };
-      cityName = getCityName(cityLocation);
+      cityName = await getCityName(cityLocation);
     } else {
       cityName = data.cityName;
-      cityLocation = getCityPosition(cityName, data.country);
+      cityLocation = await getCityPosition(cityName, data.country);
     }
 
     return { cityLocation, cityName };
