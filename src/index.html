@@ -6,6 +6,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet">
   <title>Weather App</title>
 </head>
 <body>
@@ -17,7 +19,9 @@
     <main class="main-weather-info">
       <div class="main-weather-info__btns">
         <button id="open-search" class="main-weather-info__btn">Search for places</button>
-        <button class="main-weather-info__btn main-weather-info__btn--rounded" id="location-btn">L</button>
+        <button class="main-weather-info__btn main-weather-info__btn--rounded" id="location-btn">
+          <span class="material-icons-outlined">place</span>
+        </button>
       </div>
 
       <div class="main-weather-info__body">
@@ -34,7 +38,9 @@
     </main>
 
     <aside class="search search--hidden" id="search">
-      <button id="close-search" class="search__btn">X</button>
+      <button id="close-search" class="search__btn">
+        <span class="material-icons-outlined">close</span>
+      </button>
       <form class="search__form" id="search-form">
         <div class="search__form__field">
           <input class="search__form__input" id="search-input" type="search" placeholder="search location" required>
