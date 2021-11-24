@@ -105,7 +105,9 @@ const weatherUi = (() => {
     updateDailyInfo(daily);
   };
 
-  const getWeatherForUserLocation = () => {};
+  const getWeatherForUserLocation = () => {
+    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showLocationError);
+  };
 
   const addEventListeners = () => {
     dom.getLocationBtn.addEventListener('click', getWeatherForUserLocation);
