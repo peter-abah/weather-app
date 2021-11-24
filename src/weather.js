@@ -68,8 +68,23 @@ const weather = (() => {
     return { lat, lon };
   };
 
+  const getCityInfo = async (data) => {
+    let cityLocation;
+    let cityName;
+
+    if (data.lat) {
+      cityLocation = { lat: data.lat, lon: data.lon };
+      cityName = getCityName(cityLocation);
+    } else {
+      cityName = data.cityName;
+      cityLocation = getCityPosition(cityName, data.country);
+    }
+
+    return { cityLocation, cityName };
+  };
+
   const getWeather = async (_, data) => {
-    const { cityLocation, cityName } = await getCityPosition(data);
+    const { cityLocation, cityName } = await getCityInfo(data);
     const weatherInfo = await getWeatherInfo(cityLocation, cityName);
     PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
   };
