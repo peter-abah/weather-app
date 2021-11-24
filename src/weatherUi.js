@@ -105,6 +105,10 @@ const weatherUi = (() => {
     updateDailyInfo(daily);
   };
 
+  const showLocationError = (error) => {
+
+  };
+
   const sendWeatherRequest = (position) => {
     const { latitude, longitude } = position.coords;
 
