@@ -50,6 +50,7 @@ const weatherUi = (() => {
     forecastCards: getForecastCards(),
     highlights: getHighlights(),
     getLocationBtn: document.getElementById('location-btn'),
+    errorMessage: document.getElementById('error-message')
   };
 
   const weatherToClassName = {
@@ -110,8 +111,8 @@ const weatherUi = (() => {
     updateDailyInfo(daily);
   };
 
-  const showError = (error) => {
-
+  const showError = () => {
+    dom.errorMessage.textContent = 'An error occured, please try again';
   };
 
   const sendWeatherRequest = (position) => {
