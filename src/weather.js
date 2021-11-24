@@ -102,7 +102,8 @@ const weather = (() => {
       const { cityLocation, cityName } = await getCityInfo(data);
       const weatherInfo = await getWeatherInfo(cityLocation, cityName);
       PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
-    } catch (error) {
+    } catch (e) {
+      const error = { message: 'Could not get weather. Please try again', error: e };
       PubSub.publish(EVENT_TYPES.weather_info, { error });
     }
   };
