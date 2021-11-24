@@ -111,13 +111,18 @@ const weatherUi = (() => {
 
   const updateWeatherInfo = (_, { today, daily, error }) => {
     if (error) {
-      showError();
+      showError(error);
       return;
     }
 
     updateTodayInfo(today);
     updateDailyInfo(daily);
     clearError();
+  };
+
+  const showLocationError = () => {
+    const error = { message: 'Could not get location. Please try again.' };
+    showError(error);
   };
 
   const sendWeatherRequest = (position) => {
@@ -127,7 +132,7 @@ const weatherUi = (() => {
   };
 
   const getWeatherForUserLocation = () => {
-    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showError);
+    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showLocationError);
   };
 
   const addEventListeners = () => {
