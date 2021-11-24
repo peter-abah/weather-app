@@ -105,6 +105,12 @@ const weatherUi = (() => {
     updateDailyInfo(daily);
   };
 
+  const sendWeatherRequest = (position) => {
+    const { latitude, longitude } = position.coords;
+
+    PubSub.publish(EVENT_TYPES.get_weather, { lat: latitude, lon: longitude });
+  };
+
   const getWeatherForUserLocation = () => {
     navigator.geolocation.getCurrentPosition(sendWeatherRequest, showLocationError);
   };
