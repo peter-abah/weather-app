@@ -100,7 +100,12 @@ const weatherUi = (() => {
     });
   };
 
-  const updateWeatherInfo = (_, { today, daily }) => {
+  const updateWeatherInfo = (_, { today, daily, error }) => {
+    if (error) {
+      showError();
+      return
+    }
+    
     updateTodayInfo(today);
     updateDailyInfo(daily);
   };
