@@ -65,9 +65,9 @@ const weatherUi = (() => {
     const weatherClassName = weatherToClassName[weather];
     dom.today.weatherImg.className = `weather-img weather-img--large ${weatherClassName}`;
     dom.today.tempValue.textContent = Math.round(temp, 1);
-    dom.today.description = weather;
-    //dom.today.date = convertDateToString(date);
-    dom.today.location = location;
+    dom.today.description.textContent = weather;
+    dom.today.date.textContent = convertDateToString(date);
+    dom.today.location.textContent = location;
   };
 
   const updateHighlights = (todayWeather) => {
@@ -93,8 +93,8 @@ const weatherUi = (() => {
     dom.forecastCards.forEach((card, i) => {
       const dayInfo = dailyForecast[i];
       const weatherClassName = weatherToClassName[dayInfo.weather];
-      //card.date.textContent = convertDateToString(dayInfo.date);
-      card.img.className = `weather-img, ${weatherClassName}`;
+      card.date.textContent = convertDateToString(dayInfo.date);
+      card.img.className = `weather-img ${weatherClassName}`;
       card.temp_high.textContent = Math.round(dayInfo.max_temp);
       card.temp_low.textContent = Math.round(dayInfo.min_temp);
     });
