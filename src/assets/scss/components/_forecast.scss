@@ -24,10 +24,10 @@
       margin-top: 2rem;
       display: flex;
       gap: 1rem;
-    }
 
-    &__low {
-      color: var(--color-secondary)
+      &--low {
+        color: var(--color-secondary);
+      }
     }
   }
 }
