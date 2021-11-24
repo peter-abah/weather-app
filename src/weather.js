@@ -98,9 +98,13 @@ const weather = (() => {
   };
 
   const getWeather = async (_, data) => {
-    const { cityLocation, cityName } = await getCityInfo(data);
-    const weatherInfo = await getWeatherInfo(cityLocation, cityName);
-    PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
+    try {
+      const { cityLocation, cityName } = await getCityInfo(data);
+      const weatherInfo = await getWeatherInfo(cityLocation, cityName);
+      PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
+    } catch (error) {
+      PubSub.publish(EVENT_TYPES.weather_info, { error });
+    }
   };
 
   PubSub.subscribe(EVENT_TYPES.get_weather, getWeather);
