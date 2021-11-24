@@ -36,7 +36,7 @@ const weather = (() => {
     date: new Date(dayData.dt * 1000),
     min_temp: dayData.temp.min,
     max_temp: dayData.temp.max,
-    weather: dayData.weather,
+    weather: dayData.weather[0].main,
   });
 
   const getDailyForecast = (daily) => {
@@ -44,31 +44,33 @@ const weather = (() => {
     return dailyData;
   };
 
-  const getTodayData = (todayData) => ({
+  const getTodayData = (todayData, cityName) => ({
     temp: todayData.temp,
     visibility: todayData.visibility,
     humidity: todayData.humidity,
     pressure: todayData.pressure,
-    wind_deg: todayData.wind_deg,
-    wind_speed: todayData.wind_speed,
-    weather: todayData.weather[0],
+    windDeg: todayData.wind_deg,
+    windSpeed: todayData.wind_speed,
+    weather: todayData.weather[0].main,
+    date: new Date(todayData.dt * 1000),
+    location: cityName,
   });
 
-  const processWeather = ({ current, daily }) => ({
-    today: getTodayData(current),
+  const processWeather = ({ current, daily }, cityName) => ({
+    today: getTodayData(current, cityName),
     daily: getDailyForecast(daily),
   });
 
-  const getWeatherInfo = async (cityLocation) => {
+  const getWeatherInfo = async (cityLocation, cityName) => {
     const requestURL = createWeatherRequestURL(cityLocation);
     let weatherInfo = await fetchJSON(requestURL);
-    weatherInfo = processWeather(weatherInfo);
+    weatherInfo = processWeather(weatherInfo, cityName);
     return weatherInfo;
   };
 
   const getWeather = async (_, { cityName, country }) => {
     const cityLocation = await getCityPosition(cityName, country);
-    const weatherInfo = await getWeatherInfo(cityLocation);
+    const weatherInfo = await getWeatherInfo(cityLocation, cityName);
     PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
   };
 
