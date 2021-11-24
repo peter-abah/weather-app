@@ -101,8 +101,8 @@ const weatherUi = (() => {
     });
   };
 
-  const showError = () => {
-    dom.errorMessage.textContent = 'An error occured, please try again';
+  const showError = (error) => {
+    dom.errorMessage.textContent = error.message;
   };
 
   const clearError = () => {
