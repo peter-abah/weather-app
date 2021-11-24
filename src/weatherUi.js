@@ -101,6 +101,10 @@ const weatherUi = (() => {
     });
   };
 
+  const showError = () => {
+    dom.errorMessage.textContent = 'An error occured, please try again';
+  };
+
   const updateWeatherInfo = (_, { today, daily, error }) => {
     if (error) {
       showError();
@@ -109,10 +113,6 @@ const weatherUi = (() => {
 
     updateTodayInfo(today);
     updateDailyInfo(daily);
-  };
-
-  const showError = () => {
-    dom.errorMessage.textContent = 'An error occured, please try again';
   };
 
   const sendWeatherRequest = (position) => {
