@@ -78,7 +78,6 @@ const weather = (() => {
   const getCityName = async (cityLocation) => {
     const requestURL = createCityNameRequestURL(cityLocation);
     const data = await fetchJSON(requestURL);
-    debugger
     const { name } = data[0];
     return name;
   };
