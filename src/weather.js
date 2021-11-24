@@ -68,8 +68,8 @@ const weather = (() => {
     return weatherInfo;
   };
 
-  const getWeather = async (_, { cityName, country }) => {
-    const cityLocation = await getCityPosition(cityName, country);
+  const getWeather = async (_, data) => {
+    const cityLocation = await getCityPosition(data);
     const weatherInfo = await getWeatherInfo(cityLocation, cityName);
     PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
   };
