@@ -11,6 +11,7 @@
   background-color: var(--color-bg-alt);
 
   overflow-y: auto;
+  transition: width 500ms ease;
 
   &--hidden {
     width: 0;
