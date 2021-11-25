@@ -136,6 +136,7 @@ const weatherUi = (() => {
   };
 
   const showError = (error) => {
+    debugger
     dom.errorMessage.textContent = error.message;
   };
 
