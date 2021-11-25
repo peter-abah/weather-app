@@ -41,6 +41,7 @@ const searchUi = (() => {
     const { city } = event.target.dataset;
     const [_, cityName, country] = city.match(splitCityNameRegex);
     PubSub.publish(EVENT_TYPES.get_weather, { cityName, country });
+    toggleSearchWrapperVisibility();
   };
 
   const createCityBtn = (city) => {
