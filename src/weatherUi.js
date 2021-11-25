@@ -108,7 +108,7 @@ const weatherUi = (() => {
     humidity.value.textContent = todayWeather.humidity;
     humidity.progressBar.style.setProperty(
       '--value',
-      `${todayWeather.humidity}%`,
+      `${todayWeather.humidity}%`
     );
 
     windStatus.value.textContent = todayWeather.windDeg;

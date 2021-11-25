@@ -6,7 +6,7 @@ const weather = (() => {
   const openWeatherURLs = {
     geocode: 'http://api.openweathermap.org/geo/1.0/direct?',
     oneCall: 'https://api.openweathermap.org/data/2.5/onecall?',
-    geocodeReverse: 'http://api.openweathermap.org/geo/1.0/reverse?', 
+    geocodeReverse: 'http://api.openweathermap.org/geo/1.0/reverse?',
   };
 
   const fetchJSON = async (requestURL) => {
@@ -103,7 +103,10 @@ const weather = (() => {
       const weatherInfo = await getWeatherInfo(cityLocation, cityName);
       PubSub.publish(EVENT_TYPES.weather_info, weatherInfo);
     } catch (e) {
-      const error = { message: 'Could not get weather. Please try again', error: e };
+      const error = {
+        message: 'Could not get weather. Please try again',
+        error: e,
+      };
       PubSub.publish(EVENT_TYPES.weather_info, { error });
     }
   };
