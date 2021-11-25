@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet">
+  <title>Weather App</title>
+<script defer src="main.js"></script></head>
+<body>
+  <header class="invisible">
+    <h1>Weather App</h1>
+  </header>
+  
+  <div class="sidebar">
+    <main class="main-weather-info">
+      <div class="main-weather-info__btns">
+        <button id="open-search" class="main-weather-info__btn">Search for places</button>
+        <button class="main-weather-info__btn main-weather-info__btn--rounded" id="location-btn">
+          <span class="material-icons-outlined">place</span>
+        </button>
+      </div>
+
+      <div class="main-weather-info__body">
+        <p id="error-message" class="error-message"></p>
+        <div class="weather-img weather-img--large weather-img--shower" id="today-weather-img"></div>
+        <p class="main-weather-info__temp">
+          <span class="main-weather-info__temp__value" id="today-temp-value">0</span>
+          <span class="main-weather-info__temp__unit">°C</span>
+        </p>
+        
+        <p class="main-weather-info__description" id="today-description">Shower</p>
+        <p class="main-weather-info__date">
+          <span>Today</span> • <span id="today-date">Mon, 1 Jan</span>
+        </p>
+        <p class="main-weather-info__location" id="today-location">Random Info</p>
+      </div>
+    </main>
+
+    <aside class="search search--hidden" id="search">
+      <button id="close-search" class="search__btn">
+        <span class="material-icons-outlined">close</span>
+      </button>
+      <form class="search__form" id="search-form">
+        <div class="search__form__field">
+          <input class="search__form__input" id="search-input" type="search" placeholder="search location" required>
+        </div>
+        <button class="search__form__btn" type="submit">Search</button>
+      </form>
+
+      <div class="search__results" id="search-results">
+      </div>
+    </aside>
+  </div>
+
+  <div>
+    <section class="forecast">
+      <h2 class="invisible">Forecast</h2>
+      <div class="forecast__card">
+        <h3 class="forecast__card__title">Tomorrow</h3>
+        <div class="weather-img weather-img--light-rain"></div>
+        <p class="forecast__card__temp">
+          <span class="forecast__card__temp--high">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+          <span class="forecast__card__temp--low">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="forecast__card">
+        <h3 class="forecast__card__title">Tomorrow</h3>
+        <div class="weather-img weather-img--light-rain"></div>
+        <p class="forecast__card__temp">
+          <span class="forecast__card__temp--high">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+          <span class="forecast__card__temp--low">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="forecast__card">
+        <h3 class="forecast__card__title">Tomorrow</h3>
+        <div class="weather-img weather-img--light-rain"></div>
+        <p class="forecast__card__temp">
+          <span class="forecast__card__temp--high">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+          <span class="forecast__card__temp--low">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="forecast__card">
+        <h3 class="forecast__card__title">Tomorrow</h3>
+        <div class="weather-img weather-img--light-rain"></div>
+        <p class="forecast__card__temp">
+          <span class="forecast__card__temp--high">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+          <span class="forecast__card__temp--low">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="forecast__card">
+        <h3 class="forecast__card__title">Tomorrow</h3>
+        <div class="weather-img weather-img--light-rain"></div>
+        <p class="forecast__card__temp">
+          <span class="forecast__card__temp--high">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+          <span class="forecast__card__temp--low">
+            <span class="forecast__card__temp__value">0</span>
+            <span class="forecast__card__temp__unit">°C</span>
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <h2 class="highlights__title">Today's Highlights</h2>
+      <div class="highlights__cards" id="weather-wind-status">
+        <div class="highlights__card">
+          <h3 class="highlights__card__title">Wind Status</h3>
+          <p class="highlights__card__info">
+            <span class="highlights__card__value">7</span>
+            <span class="highlights__card__unit">m/s</span>
+          </p>
+          <div class="wind-direction">
+            <span class="wind-direction__indicator">
+              <span class="material-icons wind-direction__icon">navigation</span>
+            </span>
+            <span class="wind-direction__abbr">WSW</span>
+          </div>
+        </div>
+
+        <div class="highlights__card" id="weather-humidity">
+          <h3 class="highlights__card__title">Humidity</h3>
+          <p class="highlights__card__info">
+            <span class="highlights__card__value">84</span>
+            <span class="highlights__card__unit">%</span>
+          </p>
+          <div class="progress-bar-wrapper">
+            <p class="progress-bar__range">
+              <span>0</span>
+              <span>50</span>
+              <span>100</span>
+            </p>
+            <div class="progress-bar" style="--value: 84%"></div>
+            <p class="progress-bar__unit">%</p>
+          </div>
+        </div>
+
+        <div class="highlights__card" id="weather-visibility">
+          <h3 class="highlights__card__title">Visibility</h3>
+          <p class="highlights__card__info">
+            <span class="highlights__card__value">6,4</span>
+            <span class="highlights__card__unit">miles</span>
+          </p>
+        </div>
+
+        <div class="highlights__card" id="weather-pressure">
+          <h3 class="highlights__card__title">Air Pressure</h3>
+          <p class="highlights__card__info">
+            <span class="highlights__card__value">998</span>
+            <span class="highlights__card__unit">mb</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__text">
+        Created by 
+        <a href="https://github.com/peter-abah" class="footer__link" target="blank">
+          Peter Abah
+        </a>
+      </p>
+      <p class="footer__text">
+        Design from 
+        <a href="https://devchallenges.io" class="footer__link" target="blank">
+          devchallenges.io
+        </a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
