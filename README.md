@@ -1,92 +1,47 @@
-<!-- Please update value in the {}  -->
+# Weather App
+A web app to get the weather at your current location and also find the weather at any city in the world.
 
-<h1 align="center">{Your project name}</h1>
-
-<div align="center">
-   Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
-</div>
-
-<div align="center">
-  <h3>
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
-    </a>
-    <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
-      Solution
-    </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
-      Challenge
-    </a>
-  </h3>
-</div>
-
-<!-- TABLE OF CONTENTS -->
+[Live Preview](https://peter-abah.github.io/weather-app)
 
 ## Table of Contents
 
 - [Overview](#overview)
   - [Built With](#built-with)
+  - [Screenshots](#screenshots)
 - [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-<!-- OVERVIEW -->
 
 ## Overview
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
-
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+This project was done as part of [The Odin Project Curriculum](https://theodinproject.com).
+This purpose of the project was to practice working with APIs and using async and await with promises.
 
 ### Built With
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
-
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- HTML
+- CSS
+- JavaScript
+- Webpack
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
+- User can find the weather at their current location.
+- User can search for any city in the world and find the weather at the particular city.
+- User can view weather forecast for five days.
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv) was to build an application to complete the given user stories.
+## Screenshots
+# Desktop
+![Desktop screenshot](./readme-assets/screenshot-desktop.png "Desktop Screenshot")
+![Desktop search form screenshot](./readme-assets/screenshot-desktop-search.png "Desktop Search Form Screenshot")
 
-## How To Use
-
-<!-- Example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
+# Mobile
+![Mobile Screenshot](./readme-assets/screenshot-mobile-1.png "Mobile Screenshot")
+![Mobile Screenshot](./readme-assets/screenshot-mobile-2.png "Mobile Screenshot")
+![Mobile Screenshot](./readme-assets/screenshot-mobile-3.png "Mobile Screenshot")
+![Mobile search form screenshot](./readme-assets/screenshot-mobile-search.png "Mobile Search Form Screenshot")
 
 ## Acknowledgements
 
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
-
-## Contact
-
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- Project Inspiration gotten from [The Odin Project](https://theodinproject.com)
+- Weather api from [Open weather map api](https://openweathermap.org/api)
+- Design from [devChallenges.io](https://devchallenges.io)
