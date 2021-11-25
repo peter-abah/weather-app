@@ -25,6 +25,11 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 //change layout for desktops
 @media screen and (min-width: 64rem) {
   body {
