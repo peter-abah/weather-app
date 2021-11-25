@@ -37,14 +37,6 @@ const searchUi = (() => {
     PubSub.publish(EVENT_TYPES.find_cities, { name: query });
   };
 
-  const addEventListeners = () => {
-    dom.toggleSearchBtns.forEach((btn) => {
-      btn.addEventListener('click', toggleSearchWrapperVisibility);
-    });
-    dom.searchForm.addEventListener('submit', findCities);
-    dom.searchForm.addEventListener('input', findCities);
-  };
-
   const sendWeatherRequest = (event) => {
     const { city } = event.target.dataset;
     const [_, cityName, country] = city.match(splitCityNameRegex);
@@ -73,6 +65,14 @@ const searchUi = (() => {
   const showCities = (_, { cities }) => {
     const btns = createCityBtns(cities);
     addBtnsTodDom(btns);
+  };
+
+  const addEventListeners = () => {
+    dom.toggleSearchBtns.forEach((btn) => {
+      btn.addEventListener('click', toggleSearchWrapperVisibility);
+    });
+    dom.searchForm.addEventListener('submit', findCities);
+    dom.searchForm.addEventListener('input', findCities);
   };
 
   addEventListeners();
