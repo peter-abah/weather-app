@@ -139,8 +139,9 @@ const weatherUi = (() => {
     dom.getLocationBtn.addEventListener('click', getWeatherForUserLocation);
   };
 
-  addEventListeners();
   PubSub.subscribe(EVENT_TYPES.weather_info, updateWeatherInfo);
+  addEventListeners();
+  getWeatherForUserLocation();
 })();
 
 export default weatherUi;
