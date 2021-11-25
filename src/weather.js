@@ -4,9 +4,9 @@ import EVENT_TYPES from './eventTypes';
 const weather = (() => {
   const apiKey = '9e9bcaab9af0d61546c01e9bc023065f';
   const openWeatherURLs = {
-    geocode: 'http://api.openweathermap.org/geo/1.0/direct?',
+    geocode: 'https://api.openweathermap.org/geo/1.0/direct?',
     oneCall: 'https://api.openweathermap.org/data/2.5/onecall?',
-    geocodeReverse: 'http://api.openweathermap.org/geo/1.0/reverse?',
+    geocodeReverse: 'https://api.openweathermap.org/geo/1.0/reverse?',
   };
 
   const fetchJSON = async (requestURL) => {
