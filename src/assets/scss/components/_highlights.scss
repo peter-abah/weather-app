@@ -55,6 +55,26 @@
   color: var(--color-secondary);
 }
 
+.wind-direction {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__degree {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%;
+    background-color: var(--color-secondary-alt);
+  }
+
+  &__icon {
+    font-size: 1.125rem;
+  }
+}
+
 .progress-bar {
   position: relative;
   margin: 2px 0;
