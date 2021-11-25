@@ -26,6 +26,7 @@ const weatherUi = (() => {
       },
       windStatus: {
         value: windStatusHighlight.querySelector('.highlights__card__value'),
+        directionIndicator: windStatusHighlight.querySelector('.wind-direction__indicator'),
       },
       visibility: {
         value: visibilityHighlight.querySelector('.highlights__card__value'),
@@ -79,9 +80,11 @@ const weatherUi = (() => {
       `${todayWeather.humidity}%`,
     );
 
+    windStatus.value.textContent = todayWeather.windDeg;
+    windStatus.directionIndicator.style.transform = `rotate(${todayWeather.windDeg}deg)`;
+
     visibility.value.textContent = (todayWeather.visibility / 1000)
       .toFixed(1);
-    windStatus.value.textContent = todayWeather.windDeg;
     pressure.value.textContent = todayWeather.pressure;
   };
 
