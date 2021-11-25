@@ -93,6 +93,7 @@ const weatherUi = (() => {
     'SW',
     'WSW',
     'W',
+    'WNW',
     'NW',
     'NNW',
   ];
