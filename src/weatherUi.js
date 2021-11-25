@@ -8,8 +8,12 @@ const weatherUi = (() => {
     return forecastCards.map((forecastCard) => ({
       date: forecastCard.querySelector('.forecast__card__title'),
       img: forecastCard.querySelector('.weather-img'),
-      temp_high: forecastCard.querySelector('.forecast__card__temp--high .forecast__card__temp__value'),
-      temp_low: forecastCard.querySelector('.forecast__card__temp--low .forecast__card__temp__value'),
+      temp_high: forecastCard.querySelector(
+        '.forecast__card__temp--high .forecast__card__temp__value'
+      ),
+      temp_low: forecastCard.querySelector(
+        '.forecast__card__temp--low .forecast__card__temp__value'
+      ),
     }));
   };
 
@@ -26,7 +30,10 @@ const weatherUi = (() => {
       },
       windStatus: {
         value: windStatusHighlight.querySelector('.highlights__card__value'),
-        directionIndicator: windStatusHighlight.querySelector('.wind-direction__indicator'),
+        directionIndicator: windStatusHighlight.querySelector(
+          '.wind-direction__indicator'
+        ),
+        direction: windStatusHighlight.querySelector('.wind-direction__abbr'),
       },
       visibility: {
         value: visibilityHighlight.querySelector('.highlights__card__value'),
@@ -51,7 +58,7 @@ const weatherUi = (() => {
     forecastCards: getForecastCards(),
     highlights: getHighlights(),
     getLocationBtn: document.getElementById('location-btn'),
-    errorMessage: document.getElementById('error-message')
+    errorMessage: document.getElementById('error-message'),
   };
 
   const weatherToClassName = {
@@ -72,6 +79,29 @@ const weatherUi = (() => {
     dom.today.location.textContent = location;
   };
 
+  const windDirections = [
+    'N',
+    'NNE',
+    'NE',
+    'ENE',
+    'E',
+    'ESE',
+    'SE',
+    'SSE',
+    'S',
+    'SSW',
+    'SW',
+    'WSW',
+    'W',
+    'NW',
+    'NNW',
+  ];
+
+  const degToCardinal = (deg) => {
+    const val = Math.floor(deg / 22.5 + 0.5);
+    return windDirections[val % 16];
+  };
+
   const updateHighlights = (todayWeather) => {
     const { humidity, visibility, windStatus, pressure } = dom.highlights;
     humidity.value.textContent = todayWeather.humidity;
@@ -82,9 +112,9 @@ const weatherUi = (() => {
 
     windStatus.value.textContent = todayWeather.windDeg;
     windStatus.directionIndicator.style.transform = `rotate(${todayWeather.windDeg}deg)`;
+    windStatus.direction.textContent = degToCardinal(todayWeather.windDeg);
 
-    visibility.value.textContent = (todayWeather.visibility / 1000)
-      .toFixed(1);
+    visibility.value.textContent = (todayWeather.visibility / 1000).toFixed(1);
     pressure.value.textContent = todayWeather.pressure;
   };
 
@@ -135,7 +165,10 @@ const weatherUi = (() => {
   };
 
   const getWeatherForUserLocation = () => {
-    navigator.geolocation.getCurrentPosition(sendWeatherRequest, showLocationError);
+    navigator.geolocation.getCurrentPosition(
+      sendWeatherRequest,
+      showLocationError
+    );
   };
 
   const addEventListeners = () => {
